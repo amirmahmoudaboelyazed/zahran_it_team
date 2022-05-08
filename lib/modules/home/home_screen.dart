@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../chat_screen/message_screen.dart';
 import 'components/list_of_users.dart';
 import 'components/my_space.dart';
 import 'components/top_part.dart';
@@ -27,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       mySpace(height: 10.0),
                       topPart(context),
                       mySpace(height: 10.0),
-                      listOfUsersView(context)
+                      listOfUsersView(myContext: context,function: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  Messages()));
+                      }),
                     ],
                   ),
                 ),
